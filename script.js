@@ -8,11 +8,12 @@
 
 // const submit = document.getElementById("formSubmit");
 
-const form = document.querySelector("form")
+
 
 
 window.addEventListener("load", function() {
 
+    const form = document.querySelector("form");    
     let listedPlanets;
     // Set listedPlanetsResponse equal to the value returned by calling myFetch()
     let listedPlanetsResponse = myFetch();
@@ -33,17 +34,17 @@ window.addEventListener("load", function() {
 
         addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl);
     })
-    form.addEventListener("submit", event=>{
-        event.preventDefault();
+        form.addEventListener("submit", event=>{
+        
             let pilot = document.querySelector("input[name=pilotName]").value;
             let copilot = document.querySelector("input[name=copilotName]").value;
             let fuelLevel = document.querySelector("input[name=fuelLevel]").value;
             let cargoLevel = document.querySelector("input[name=cargoMass]").value;
             let list = document.getElementById("faultyItems");
 
-        
         formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
-        
+        event.preventDefault();
+
      })
     
  });

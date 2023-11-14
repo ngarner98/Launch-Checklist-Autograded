@@ -44,39 +44,87 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 
  function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     //pilot, copilot, fuel level, cargo mass
+    /*
+        let launchStatus = document.getElementById("launchStatus")
+    let faultyItems = document.getElementById("faultyItems")
+    let pilotStatus = document.getElementById("pilotStatus")
+    let copilotStatus = document.getElementById("copilotStatus")
+    let fuelStatus = document.getElementById("fuelStatus")
+    let cargoStatus = document.getElementById("cargoStatus")
+
+    if(validateInput(pilot) === "Not a Number") {
+        pilotStatus.innerHTML=`Pilot ${pilot} is ready for launch.`;
+    }
+    if(validateInput(copilot) === "Not a Number") {
+        copilotStatus.innerHTML=`Co-pilot ${copilot} is ready for launch.`;
+    }
+    if(validateInput(fuelLevel) === "Is a Number"){
+        if(fuelLevel < 10000){
+            fuelStatus.innerHTML=`Fuel level too low for launch`;
+            launchIsAGo = false
+        }else{
+            fuelStatus.innerHTML=`Fuel level high enough for launch`;
+            }
+    if(validateInput(cargoLevel) === "Is a Number") {
+        if(cargoLevel > 10000){
+            cargoStatus.innerHTML=`Cargo mass too heavy for launch`;
+            launchIsAGo = false
+        }
+        if(launchIsAGo === false) {
+        launchStatus.innerHTML=`Shuttle Not Ready for Launch`;
+        launchStatus.style.color="red"
+    }else {
+        launchStatus.innerHTML=`Shuttle is Ready for Launch`;
+        launchStatus.style.color="green"
+    }
+    */
     let launchIsAGo = true;
-    document.getElementById("faultyItems").style.visibility = 'visible'
-    list.style.visibility = "visible"
+    document.getElementById("faultyItems").style.visibility = 'visible';
+    list.style.visibility = "visible";
     if(validateInput(pilot) === "Not a Number") {
         document.getElementById("pilotStatus").innerHTML=`Pilot ${pilot} is ready for launch.`;
+    }else{
+        window.alert("Please enter a valid value into the pilot section.");
+        return;
     }
     if(validateInput(copilot) === "Not a Number") {
         document.getElementById("copilotStatus").innerHTML=`Co-pilot ${copilot} is ready for launch.`;
+    }else{
+        window.alert("Please enter a valid value into the copilot section.");
+        return;
     }
     if(validateInput(fuelLevel) === "Is a Number"){
         if(fuelLevel < 10000){
             
             document.getElementById("fuelStatus").innerHTML=`Fuel level too low for launch`;
-            launchIsAGo = false
+            document.getElementById("fuelStatus").style.color="red";
+            launchIsAGo = false;
         }else{
             document.getElementById("fuelStatus").innerHTML=`Fuel level high enough for launch`;
-            }
         }
+    }else{
+        window.alert("Please enter a valid value into the fuel section.");
+        return;
+    }
     if(validateInput(cargoLevel) === "Is a Number") {
         if(cargoLevel > 10000){
             
             document.getElementById("cargoStatus").innerHTML=`Cargo mass too heavy for launch`;
-            launchIsAGo = false
+            document.getElementById("cargoStatus").style.color="red";
+            launchIsAGo = false;
         }else{
             document.getElementById("cargoStatus").innerHTML=`Cargo mass low enough for launch`;
         }
+    }else{
+        window.alert("Please enter a valid value into the cargo section.");
+        return;
     }
     if(launchIsAGo === false) {
         document.getElementById("launchStatus").innerHTML=`Shuttle Not Ready for Launch`;
-        document.getElementById("launchStatus").style.color="red"
+        document.getElementById("launchStatus").style.color="red";
     }else {
         document.getElementById("launchStatus").innerHTML=`Shuttle is Ready for Launch`;
-        document.getElementById("launchStatus").style.color="green"
+        document.getElementById("launchStatus").style.color="green";
     }
     
  }
