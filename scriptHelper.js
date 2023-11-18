@@ -97,7 +97,6 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
         if(fuelLevel < 10000){
             
             document.getElementById("fuelStatus").innerHTML=`Fuel level too low for launch`;
-            document.getElementById("fuelStatus").style.color="red";
             launchIsAGo = false;
         }else{
             document.getElementById("fuelStatus").innerHTML=`Fuel level high enough for launch`;
@@ -110,7 +109,6 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
         if(cargoLevel > 10000){
             
             document.getElementById("cargoStatus").innerHTML=`Cargo mass too heavy for launch`;
-            document.getElementById("cargoStatus").style.color="red";
             launchIsAGo = false;
         }else{
             document.getElementById("cargoStatus").innerHTML=`Cargo mass low enough for launch`;
